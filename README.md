@@ -15,6 +15,23 @@ AI-powered resume tailoring system with a Python FastAPI backend and React TypeS
 - **Local deployment** - your data stays on your machine
 - **Job search integration** - find relevant positions
 
+## Screenshots
+
+### Resume Input
+Upload your resume and job posting to get started.
+
+![Resume Input](docs/images/resume-input.png)
+
+### Resume Review & Customization
+Review the AI analysis, see your match score, and select additional skills you have.
+
+![Resume Review](docs/images/resume-review.png)
+
+### Optimized Resume Output
+Download your tailored resume as HTML or PDF.
+
+![Resume Output](docs/images/resume-output.png)
+
 ## Setup Options
 
 ### Option 1: Docker Containerization (Recommended)
