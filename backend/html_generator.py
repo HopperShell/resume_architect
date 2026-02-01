@@ -1,9 +1,7 @@
 # backend/html_generator.py
 
-from typing import Dict, Any, Union
+from typing import Dict, Any
 from jinja2 import Template
-import re
-import json
 
 class HTMLGenerator:
     """Generates fully modern, design‑focused HTML for resumes."""

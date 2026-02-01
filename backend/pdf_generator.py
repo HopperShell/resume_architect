@@ -8,7 +8,6 @@ import os
 import requests
 import tempfile
 import re
-from typing import Optional
 
 class PDFGenerator:
     """Handles PDF generation from HTML content using Gotenberg"""

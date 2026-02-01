@@ -28,7 +28,7 @@ class LLMClient:
         self.model_optimize = os.getenv("LLM_MODEL_OPTIMIZE", "gemini/gemini-2.5-flash")
         self.model_analyze = os.getenv("LLM_MODEL_ANALYZE", "gemini/gemini-2.5-flash")
 
-        print(f"LLM Client initialized:")
+        print("LLM Client initialized:")
         print(f"  Optimize model: {self.model_optimize}")
         print(f"  Analyze model: {self.model_analyze}")
 
@@ -384,28 +384,28 @@ IMPORTANT: Return ONLY the JSON array. No additional text or explanation.
     ) -> str:
         """Create a prompt for resume optimization with customization options"""
 
-        base_prompt = f"""
+        base_prompt = """
 You are ResumePro, an expert professional resume writer with 15+ years of experience
 helping job seekers optimize their resumes for specific job applications.
 
 Your task is to transform the given resume to PERFECTLY match the job posting requirements.
 Return a JSON object with this structure:
 
-{{
+{
 "name": "Full Name",
 "title": "Optimized Job Title",
-"contact": {{
+"contact": {
     "email": "email@example.com",
     "phone": "Phone Number",
     "location": "City, State"
-}},
+},
 "summary": "Professional summary highlighting key strengths",
-"skills": {{
+"skills": {
     "Technical Skills": ["skill1", "skill2"],
     "Soft Skills": ["skill3", "skill4"]
-}},
+},
 "experience": [
-    {{
+    {
     "position": "Job Title",
     "company": "Company Name",
     "period": "Start Date - End Date",
@@ -413,23 +413,23 @@ Return a JSON object with this structure:
         "Key achievement with metrics",
         "Another key achievement"
     ]
-    }}
+    }
 ],
 "education": [
-    {{
+    {
     "degree": "Degree Name",
     "institution": "University Name",
     "period": "Graduation Year",
     "details": ["Honors or relevant coursework"]
-    }}
+    }
 ],
 "certifications": [
-    {{
+    {
     "certification": "Certification Name",
     "provider": "Provider Name"
-    }}
+    }
 ]
-}}
+}
 
 Guidelines for tailoring the resume:
 1. Maintain the candidate's core experience and education, but add keywords that fit into experience to improve match score.

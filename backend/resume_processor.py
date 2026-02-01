@@ -7,7 +7,7 @@ interacting with LLM providers to optimize resumes.
 
 import re
 import json
-from typing import Dict, Any, Tuple, Optional, List, Union
+from typing import Dict, Any, Optional, List
 from llm_client import LLMClient
 
 
