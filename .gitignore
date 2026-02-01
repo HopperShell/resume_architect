@@ -15,6 +15,7 @@
 !.env.example
 .vscode/
 .idea/
+.serena/
 
 # === Resume Templates ===
 /Templates
