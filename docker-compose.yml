@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/static:/app/static
+      - ./backend/data:/app/data
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DEBUG=True
+    restart: unless-stopped
+    depends_on:
+      - gotenberg
+    networks:
+      - resume-net
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - resume-net
+
+  gotenberg:
+    image: gotenberg/gotenberg:8
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - DISABLE_LIBREOFFICE=true
+    restart: unless-stopped
+    networks:
+      - resume-net
+
+networks:
+  resume-net:
+    driver: bridge
+
+volumes:
+  static_data:

@@ -1,0 +1,23 @@
+# === Node.js (anywhere) ===
+**/node_modules/
+**/.env
+
+# === Python (backend) ===
+**/__pycache__/
+**/venv/
+**/*.pdf
+
+# === General ===
+*.log
+.DS_Store
+.env
+.env.*
+.vscode/
+.idea/
+
+# === Resume Templates ===
+/Templates
+/Templates/*
+
+# === Test Data ===
+/test_data/
