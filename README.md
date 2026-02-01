@@ -7,11 +7,25 @@ AI-powered resume tailoring for job-specific applications. Paste your resume and
 ## Quick Start (3 Steps)
 
 ### Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
-- A free API key from one of these providers:
-  - [Google AI Studio](https://aistudio.google.com/apikey) (Gemini) - recommended
-  - [OpenAI](https://platform.openai.com/api-keys)
-  - [Anthropic](https://console.anthropic.com/)
+
+**Docker & Docker Compose** - required to run the app:
+
+| Platform | Recommended Install |
+|----------|---------------------|
+| **macOS** | [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/) (includes Compose) |
+| **Windows** | [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/) (includes Compose) |
+| **Linux** | Install both: [Docker Engine](https://docs.docker.com/engine/install/) + [Docker Compose](https://docs.docker.com/compose/install/linux/) |
+
+Verify installation:
+```bash
+docker --version        # Should show Docker version 20.10+
+docker compose version  # Should show Docker Compose v2+
+```
+
+**API Key** - get a free key from one of these providers:
+- [Google AI Studio](https://aistudio.google.com/apikey) (Gemini) - recommended, generous free tier
+- [OpenAI](https://platform.openai.com/api-keys)
+- [Anthropic](https://console.anthropic.com/)
 
 ### Step 1: Clone and enter the project
 ```bash
@@ -43,7 +57,7 @@ Then edit `.env` and replace `your_key_here` with your actual API key.
 
 ### Step 3: Start the app
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ### Open in your browser
@@ -107,24 +121,24 @@ Make sure Docker Desktop is running.
 ### App won't load at http://localhost
 ```bash
 # Check if containers are running
-docker-compose ps
+docker compose ps
 
 # View logs for errors
-docker-compose logs
+docker compose logs
 
 # Restart everything
-docker-compose down && docker-compose up -d
+docker compose down && docker compose up -d
 ```
 
 ### API errors / "Invalid API key"
 - Verify your API key is correct in `.env`
 - Make sure you uncommented the right provider line
-- Restart after changing `.env`: `docker-compose down && docker-compose up -d`
+- Restart after changing `.env`: `docker compose down && docker compose up -d`
 
 ### PDF download not working
 The Gotenberg service handles PDF generation. Check it's running:
 ```bash
-docker-compose logs gotenberg
+docker compose logs gotenberg
 ```
 
 ---
