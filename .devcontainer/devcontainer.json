@@ -1,5 +1,0 @@
-{
-    "postCreateCommand": "echo 'Skip postCreateCommand'",
-    "updateContentCommand": "echo 'Skip updateContentCommand'"
-  }
-  
